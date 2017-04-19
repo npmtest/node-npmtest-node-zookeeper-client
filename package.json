@@ -1,1 +1,40 @@
-{     "devDependencies": {         "node-zookeeper-client": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-node-zookeeper-client",     "homepage": "https://github.com/npmtest/node-npmtest-node-zookeeper-client",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-node-zookeeper-client.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [node-zookeeper-client (v0.2.2)](https://github.com/alexguan/node-zookeeper-client)  [![npm package](https://img.shields.io/npm/v/npmtest-node-zookeeper-client.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-node-zookeeper-client) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-node-zookeeper-client.svg)](https://travis-ci.org/npmtest/node-npmtest-node-zookeeper-client)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "node-zookeeper-client": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-node-zookeeper-client",
+    "keywords": [
+        "coverage",
+        "test",
+        "node-zookeeper-client"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_node_zookeeper_client.js",
+    "name": "npmtest-node-zookeeper-client",
+    "nameAlias": "npmtest_node_zookeeper_client",
+    "nameOriginal": "npmtest-node-zookeeper-client",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-node-zookeeper-client.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
